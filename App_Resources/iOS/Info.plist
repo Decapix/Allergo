@@ -43,5 +43,19 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>App needs access to location when open.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>App needs access to location in background.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>App needs access to location in background.</string>
+
+
+	<key>UIBackgroundModes</key>
+	<array>
+	<string>location</string>
+	</array>
+
 </dict>
 </plist>

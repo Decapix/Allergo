@@ -4,10 +4,18 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@nativescript-community/sqlite": "^3.4.2",
+    "@nativescript-community/ui-mapbox": "^6.2.20",
+    "@nativescript/background-http": "^6.0.0",
     "@nativescript/core": "~8.6.0",
-    "@nativescript/theme": "~3.0.2"
+    "@nativescript/geolocation": "^8.2.1",
+    "@nativescript/local-notifications": "^6.1.1",
+    "@nativescript/theme": "~3.0.2",
+    "nativescript-sqlite": "^2.8.6"
   },
   "devDependencies": {
+    "@nativescript/android": "^8.6.2",
+    "@nativescript/preview-cli": "1.0.5",
     "@nativescript/webpack": "~5.0.18"
   }
 }

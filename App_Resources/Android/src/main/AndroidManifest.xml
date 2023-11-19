@@ -12,6 +12,17 @@
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="android.permission.INTERNET"/>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	  <!-- Always include this permission -->
+
+
+  <!-- Include only if your app benefits from precise location access. -->
+  <!-- This permission is for "precise" location data -->
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+  <!-- Required only when requesting background location access on
+       Android 10 (API level 29) and higher. -->
+  <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
 
 	<application
 		android:name="com.tns.NativeScriptApplication"
@@ -38,5 +49,7 @@
 			</intent-filter>
 		</activity>
 		<activity android:name="com.tns.ErrorReportActivity"/>
+		<service android:name="com.mapbox.services.android.telemetry.service.TelemetryService" />
+
 	</application>
 </manifest>

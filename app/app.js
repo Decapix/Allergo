@@ -5,7 +5,9 @@ purpose of the file is to pass control to the app’s first module.
 */
 
 import { Application } from '@nativescript/core';
+const httpService = require("./services/http-service");
 
+httpService.start();
 Application.run({ moduleName: 'app-root' })
 
 /*
