@@ -18,6 +18,7 @@ class GeolocationService {
       this.watchId = geolocation.watchLocation(
         (location) => {
           this.onLocationUpdate(location);
+          console.log("location,", location)
         },
         (error) => {
           console.log("Error: " + error.message);

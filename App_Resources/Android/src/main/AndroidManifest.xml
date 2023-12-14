@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="__PACKAGE__">
+	package="__PACKAGE__"
+	android:versionCode="1"
+	android:versionName="1.0">
 
 	<supports-screens
 		android:smallScreens="true"
 		android:normalScreens="true"
 		android:largeScreens="true"
 		android:xlargeScreens="true"/>
+	<uses-sdk
+		android:minSdkVersion="17"
+		android:targetSdkVersion="__APILEVEL__"/>
 
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -17,11 +22,11 @@
 
   <!-- Include only if your app benefits from precise location access. -->
   <!-- This permission is for "precise" location data -->
-  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <!-- <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> -->
 
   <!-- Required only when requesting background location access on
        Android 10 (API level 29) and higher. -->
-  <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+  <!-- <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> -->
 
 
 	<application
@@ -31,6 +36,19 @@
 		android:label="@string/app_name"
 		android:theme="@style/AppTheme"
 		android:hardwareAccelerated="true">
+
+
+		<service android:name="com.mapbox.services.android.telemetry.service.TelemetryService" />
+
+		<service android:name="com.nativescript.location.BackgroundService" 
+			android:exported="false" >
+		</service>
+
+		<service android:name="com.nativescript.location.BackgroundService26" 
+			android:permission="android.permission.BIND_JOB_SERVICE"
+            android:enabled="true"
+            android:exported="false">
+		</service>
 
 		<activity
 			android:name="com.tns.NativeScriptActivity"
@@ -49,7 +67,7 @@
 			</intent-filter>
 		</activity>
 		<activity android:name="com.tns.ErrorReportActivity"/>
-		<service android:name="com.mapbox.services.android.telemetry.service.TelemetryService" />
+
 
 	</application>
 </manifest>
